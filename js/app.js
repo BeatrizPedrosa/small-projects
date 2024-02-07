@@ -6,6 +6,20 @@ navToggle.addEventListener('click', function(){
     links.classList.toggle('show-links')
 })
 
+//SIDEBAR
+const sidebarToggle = document.querySelector('.sidebar-toggle')
+const closeBtn = document.querySelector('.close-btn')
+const sidebar = document.querySelector('.sidebar')
+
+sidebarToggle.addEventListener('click', function(){
+    console.log(sidebar.classList)
+    sidebar.classList.toggle('show-sidebar')
+})
+
+closeBtn.addEventListener('click',function(){
+    sidebar.classList.remove('show-sidebar')
+})
+
 //HEX
 if (window.location.href.includes("ColorFlipper")) {
     const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]

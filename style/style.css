@@ -169,7 +169,6 @@ main {
   display: grid;
   place-items: center;
 }
-
 /*
 =============== 
 Navbar
@@ -223,14 +222,13 @@ nav {
   transition: var(--transition);
 }
 .show-links {
-  /* height: 10rem; */
   height: auto;
 }
 @media screen and (min-width: 800px) {
   .nav-center {
     max-width: 1170px;
     margin: 0 auto;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
@@ -241,14 +239,9 @@ nav {
   .nav-toggle {
     display: none;
   }
-  /* .links {
+  .links {
     height: auto;
     display: flex;
-  } */
-  .links {
-    height: auto; /* Permitir que a altura seja ajustada automaticamente conforme o conteúdo */
-    display: block;
-    flex-wrap: wrap; /* Permite que os itens sejam envolvidos em múltiplas linhas */
   }
   .links a {
     padding: 0;
@@ -270,7 +263,6 @@ nav {
     color: var(--clr-primary-7);
   } */
 }
-
 
 /*
 =============== 
@@ -641,4 +633,75 @@ Modal
 .closeModal-btn:hover {
   color: var(--clr-red-light);
   transform: scale(1.3);
+}
+/*
+=============== 
+Questions
+===============
+*/
+.titleQ {
+  margin-top: 15vh;
+  margin-bottom: 4rem;
+}
+.titleQ h2 {
+  color: var(--clr-gold);
+  font-family: "Great Vibes", cursive;
+  text-align: center;
+}
+.section-center {
+  max-width: var(--fixed-width);
+}
+.question {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: var(--light-shadow);
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  margin-bottom: 2rem;
+}
+.question-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+}
+
+.question-title p {
+  margin-bottom: 0;
+  letter-spacing: var(--spacing);
+  color: var(--clr-grey-1);
+}
+.question-btn {
+  font-size: 1.5rem;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  color: var(--clr-gold);
+  transition: var(--transition);
+}
+.question-btn:hover {
+  transform: rotate(90deg);
+}
+.question-text {
+  padding: 1rem 0 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.question-text p {
+  margin-bottom: 0;
+}
+/* hide text */
+.question-text {
+  display: none;
+}
+.show-text .question-text {
+  display: block;
+}
+.minus-icon {
+  display: none;
+}
+.show-text .minus-icon {
+  display: inline;
+}
+.show-text .plus-icon {
+  display: none;
 }

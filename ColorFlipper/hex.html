@@ -11,71 +11,7 @@
         <link rel="stylesheet" href="../style/style.css" />
     </head>
     <body>
-        <nav>
-            <div class="nav-center">
-                <!-- nav header -->
-                <div class="nav-header">
-                    <img src="../imgs/logo.svg" class="logo" alt="logo" />
-                    <button class="nav-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-                <!-- links -->
-                <ul class="links">
-                    <li>
-                        <a href="../index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="../ColorFlipper/hex.html">Hex</a>
-                    </li>
-                    <li>
-                        <a href="../Counter/counter.html">Counter</a>
-                    </li>
-                    <li>
-                        <a href="../Reviews/reviews.html">Reviews</a>
-                    </li>
-                </ul>
-                <button class="sidebar-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <aside class="sidebar">
-                    <div class="sidebar-header">
-                        <img src="../imgs/logo.svg" alt="">
-                        <button class="close-btn">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                        <!-- social media -->
-                        <ul class="social-icons">
-                            <li>
-                                <a href="https://www.twitter.com">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.twitter.com">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.twitter.com">
-                                    <i class="fab fa-behance"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.twitter.com">
-                                    <i class="fab fa-linkedin"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.twitter.com">
-                                    <i class="fab fa-sketch"></i>
-                                </a>
-                            </li>
-                        </ul>
-                </aside>
-            </div>
-        </nav>
+        <div id="nav-sidebar-container"></div>
         <main>
             <div class="container">
                 <h2>Background Color: 
@@ -88,5 +24,30 @@
         </main>
         <!-- Javascript -->
         <script src="../js/app.js"></script>
+        <script>
+            fetch('../nav-sidebar.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('nav-sidebar-container').innerHTML = html;
+                    // Adiciona os event listeners após o conteúdo ser carregado
+                    const navToggle = document.querySelector('.nav-toggle');
+                    const links = document.querySelector('.links');
+                    navToggle.addEventListener('click', function() {
+                        links.classList.toggle('show-links');
+                    });
+    
+                    const sidebarToggle = document.querySelector('.sidebar-toggle');
+                    const closeBtn = document.querySelector('.closeSidebar-btn');
+                    const sidebar = document.querySelector('.sidebar');
+    
+                    sidebarToggle.addEventListener('click', function(){
+                        sidebar.classList.toggle('show-sidebar');
+                    });
+    
+                    closeBtn.addEventListener('click',function(){
+                        sidebar.classList.remove('show-sidebar');
+                    });
+                });
+        </script>
     </body>
 </html>

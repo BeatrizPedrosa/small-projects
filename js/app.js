@@ -1,25 +1,3 @@
-//NAV
-const navToggle = document.querySelector('.nav-toggle')
-const links = document.querySelector('.links')
-
-navToggle.addEventListener('click', function(){
-    links.classList.toggle('show-links')
-})
-
-//SIDEBAR
-const sidebarToggle = document.querySelector('.sidebar-toggle')
-const closeBtn = document.querySelector('.close-btn')
-const sidebar = document.querySelector('.sidebar')
-
-sidebarToggle.addEventListener('click', function(){
-    console.log(sidebar.classList)
-    sidebar.classList.toggle('show-sidebar')
-})
-
-closeBtn.addEventListener('click',function(){
-    sidebar.classList.remove('show-sidebar')
-})
-
 //HEX
 if (window.location.href.includes("ColorFlipper")) {
     const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
@@ -167,4 +145,17 @@ else if (window.location.href.includes("Reviews")) {
     }
 }
 
+//MODAL
+else if (window.location.href.includes("Modal")) {
+    const openModal = document.querySelector('.modal-btn')
+    const closeModal = document.querySelector('.closeModal-btn')
+    const modalOverlay = document.querySelector('.modal-overlay')
 
+    openModal.addEventListener('click', function(){
+        modalOverlay.classList.toggle('open-modal')
+    })
+
+    closeModal.addEventListener('click',function(){
+        modalOverlay.classList.remove('open-modal')
+    })
+}
